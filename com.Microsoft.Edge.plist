@@ -1,0 +1,18 @@
+<key>DefaultSearchProviderEnabled</key>
+<true/>
+<key>DefaultSearchProviderName</key>
+<string>Google</string>
+<key>DefaultSearchProviderSearchURL</key>
+<string>{google:baseURL}search?q={searchTerms}&amp;{google:RLZ}{google:originalQueryForSuggestion}{google:assistedQueryStats}{google:searchFieldtrialParameter}{google:searchClient}{google:sourceId}ie={inputEncoding}</string>
+<key>DefaultSearchProviderSuggestURL</key>
+<string>{google:baseURL}complete/search?output=chrome&amp;q={searchTerms}</string>
+<key>PasswordManagerEnabled</key>
+<false/>
+<key>BrowserSignin</key>
+<integer>1</integer>
+<key>AutofillCreditCardEnabled</key>
+<false/>
+<key>DefaultBrowserSettingEnabled</key>
+<true/>
+<key>ShowHomeButton</key>
+<true />

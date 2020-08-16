@@ -1,0 +1,21 @@
+# This document includes instructions on how to create a plist file that can be used with Microsoft Endpoint Manager
+# Information has been collected from https://docs.microsoft.com/en-us/deployedge/configure-microsoft-edge-on-mac
+# These instructions needs to be done on a mac
+# Install Xcode from the Appstore
+
+# The commands below will generate a plist that makes Google the default search provider. You cann add additional or remove these.
+# Microsoft Edge Policy - Windows and Mac - https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies
+Open a Terminal on macOS and run below:
+/usr/bin/defaults write ~/Desktop/com.microsoft.Edge.plist DefaultSearchProviderEnabled -boolean true 
+/usr/bin/defaults write ~/Desktop/com.microsoft.Edge.plist DefaultSearchProviderName -string Google
+/usr/bin/defaults write ~/Desktop/com.microsoft.Edge.plist DefaultSearchProviderSearchURL -string '{google:baseURL}search?q={searchTerms}&{google:RLZ}{google:originalQueryForSuggestion}{google:assistedQueryStats}{google:searchFieldtrialParameter}{google:searchClient}{google:sourceId}ie={inputEncoding}'
+/usr/bin/defaults write ~/Desktop/com.microsoft.Edge.plist DefaultSearchProviderSuggestURL -string '{google:baseURL}complete/search?output=chrome&q={searchTerms}'
+
+# When you have run above you can verify the created file by opening it in Xcode.
+# If it looks good, run the next command on the file.
+
+/usr/bin/plutil -convert xml1 ~/Desktop/com.microsoft.Edge.plist
+
+# After this go open the file in Visual Studio Code and remove every <plist> and <dict> values, and xml headers from your file.
+# If this is not done, the deployment will fail.
+
